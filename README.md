@@ -123,4 +123,5 @@ Unverified areas include another machine/OS, actual network outages and timeouts
 ## What would you improve with one extra hour?
 
 1. Fix known bug: Minor API edge case: an extremely large task ID, such as 9223372036854775808, produces 500 Internal Server Error when completing or deleting. It should return a controlled 400 or 404
+2. Fix the API GET /tasks/stats 'completed' so that it returns total completed (live completed and archived completed) rather than just live completed. The frontend does but the API does not.
 2. Prioritize repeatable regression protection: roughly 40 minutes automating the browser workflow and stale-task recovery, then 20 minutes adding the API tests and frontend build to CI. The keyboard-focus issue was found through interaction testing; automating that flow would make subsequent changes safer. New product features would remain separate work.
