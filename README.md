@@ -1,6 +1,6 @@
 # Task Tracker
 
-A lightweight task management app for the Carbon Arc take-home assessment: a Python Flask API, a JavaScript React interface, and Docker Compose. Create and complete tasks, move deleted tasks into a reference archive, and view statistics calculated by the backend. SQLite preserves current and archived tasks across restarts.
+A lightweight task management app for the take-home assessment: a Python Flask API, a JavaScript React interface, and Docker Compose. Create and complete tasks, move deleted tasks into a reference archive, and view statistics calculated by the backend. SQLite preserves current and archived tasks across restarts.
 
 ## Build and run
 
@@ -122,8 +122,5 @@ Unverified areas include another machine/OS, actual network outages and timeouts
 
 ## What would you improve with one extra hour?
 
-Prioritize repeatable regression protection: roughly 40 minutes automating the browser workflow and stale-task recovery, then 20 minutes adding the API tests and frontend build to CI. The keyboard-focus issue was found through interaction testing; automating that flow would make subsequent changes safer. New product features would remain separate work.
-
-## AI assistance
-
-AI use was permitted by the assessment. The candidate directed product priorities, tried the workflow, and provided feedback. The AI agent recommended implementation choices, wrote the code, tests, and documentation, and performed the recorded automated and browser checks.
+1. Fix known bug: Minor API edge case: an extremely large task ID, such as 9223372036854775808, produces 500 Internal Server Error when completing or deleting. It should return a controlled 400 or 404
+2. Prioritize repeatable regression protection: roughly 40 minutes automating the browser workflow and stale-task recovery, then 20 minutes adding the API tests and frontend build to CI. The keyboard-focus issue was found through interaction testing; automating that flow would make subsequent changes safer. New product features would remain separate work.
